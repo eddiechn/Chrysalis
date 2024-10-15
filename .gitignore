@@ -1,0 +1,27 @@
+# General
+build/
+.gradle/
+.idea/
+.vscode/
+*.log
+.DS_Store
+
+# Android
+local.properties
+*.apk
+*.dex
+app/build/
+*.so
+.cxx/
+
+# iOS
+Pods/
+DerivedData/
+*.xcworkspace
+*.xcuserdata
+*.xcuserdatad
+*.xcodeproj/project.xcworkspace/
+
+# Kotlin Multiplatform
+*.jar
+*.war
