@@ -8,11 +8,12 @@ import org.springframework.stereotype.Service
 
 @Service
 class AnswerService(
-    private val answerRepository: AnswerRepository
+    private val answerRepository: AnswerRepository,
+    private val userService : UserService
 ) {
 
     fun addAnswer(content: String, user: User, prompt: Prompt): Answer {
-        val answer = Answer(content = content, user = user, prompt = prompt)
+        val answer = Answer(id = user.id, content = content, user = user, prompt = prompt)
         return answerRepository.save(answer)
     }
 
@@ -20,15 +21,12 @@ class AnswerService(
         return answerRepository.findAllByUser(user)
     }
 
-    fun getLatestAnswer(): Answer? {
-        return answerRepository.findTopByOrderByIdDesc()
+    fun getLatestAnswer(user: User): Answer? {
+        return answerRepository.findTopByUserOrderByIdDesc(user)
     }
 
-    fun deleteLatest() {
-        val answer = answerRepository.findTopByOrderByIdDesc()
-        if (answer != null) {
-            answerRepository.delete(answer)
+    fun deleteLatest(answer: Answer) {
+        answerRepository.delete(answer)
 
-        } else throw IllegalArgumentException("Answer list is already empty")
     }
 }

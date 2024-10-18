@@ -36,10 +36,11 @@ class AnswerController(
     }
 
     @DeleteMapping("/latest")
-    fun deleteLatest() : ResponseEntity<Void> {
-        val answer = answerService.getLatestAnswer() ?: return ResponseEntity.notFound().build()
+    fun deleteLatest(@RequestParam userId: Long) : ResponseEntity<Void> {
+        val user : User = userService.findById(userId) ?: return ResponseEntity.notFound().build()
+        val answer = answerService.getLatestAnswer(user) ?: return ResponseEntity.notFound().build()
 
-        answerService.deleteLatest()
+        answerService.deleteLatest(answer)
         return ResponseEntity.noContent().build()
     }
 
