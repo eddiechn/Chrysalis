@@ -8,6 +8,5 @@ import org.springframework.stereotype.Repository
 @Repository
 interface AnswerRepository : JpaRepository<Answer, Long> {
     fun findAllByUser(user: User) : List<Answer>
-
-    fun findTopByOrderByIdDesc(): Answer?
+    fun findTopByUserOrderByIdDesc(user : User): Answer?
 }
