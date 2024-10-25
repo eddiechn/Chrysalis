@@ -17,6 +17,9 @@ data class User(
     @Column(nullable = false)
     val password: String,
 
+
+
+
     @OneToMany(mappedBy = "user", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
     @JsonManagedReference
     val answers: List<Answer> = emptyList()
