@@ -1,0 +1,267 @@
+import openai
+import csv
+import os
+from typing import List, Dict, Set
+from datetime import datetime
+import logging
+import hashlib
+import dotenv
+
+class MentalHealthDataGenerator:
+    def __init__(self, api_key: str, output_file: str = "mental_health_training_data.csv"):
+        """
+        Initialize the data generator with API key and output file configuration.
+        """
+        self.client = openai.Client(api_key=api_key)
+        self.output_file = output_file
+        
+        # Sample questions to guide the AI in generating similar ones
+        self.example_questions = [
+            "Reflect on a time when you felt overwhelmed. How did you cope with it?",
+            "What are some strategies you use to manage stress?",
+            "How do you practice self-care and prioritize your mental health?",
+            "What advice would you give to someone struggling with anxiety or depression?",
+            "Reflect on one person you look up to for their mental health habits. What do you admire about them?",
+        ]
+        
+        # Keep track of generated questions to avoid duplicates
+        self.used_questions: Set[str] = set()
+        
+        # Set up logging
+        logging.basicConfig(
+            level=logging.INFO,
+            format='%(asctime)s - %(levelname)s - %(message)s',
+            handlers=[
+                logging.FileHandler('data_generation.log'),
+                logging.StreamHandler()
+            ]
+        )
+        self.logger = logging.getLogger(__name__)
+
+    def generate_question(self) -> str:
+        """
+        Generate a new mental health-related question using GPT-4.
+        """
+        try:
+            prompt = """Generate a new, thoughtful question about mental health and well-being.
+
+            The question should:
+            1. Encourage self-reflection and personal growth
+            2. Be open-ended and conversation-starting
+            3. Be sensitive and empathetic
+            4. Focus on coping strategies, emotional intelligence, or personal experiences
+            5. Be different from these examples (but similar in style):
+            {}
+
+            Respond with ONLY the question, no other text.
+            """.format("\n".join(f"- {q}" for q in self.example_questions))
+
+            response = self.client.chat.completions.create(
+                model="gpt-4o-mini",
+                messages=[
+                    {"role": "system", "content": "You are a mental health professional creating thoughtful, empathetic questions for mental health discussions."},
+                    {"role": "user", "content": prompt}
+                ],
+                temperature=0.9,
+                max_tokens=100
+            )
+            
+            new_question = response.choices[0].message.content.strip()
+            
+            # Generate a hash of the question's core meaning to check for semantic duplicates
+            question_hash = self._get_semantic_hash(new_question)
+            
+            if question_hash in self.used_questions:
+                self.logger.info("Generated a semantically similar question, trying again...")
+                return self.generate_question()
+                
+            self.used_questions.add(question_hash)
+            return new_question
+            
+        except Exception as e:
+            self.logger.error(f"Error generating question: {str(e)}")
+            return None
+
+    def _get_semantic_hash(self, question: str) -> str:
+        """
+        Generate a semantic hash of the question to detect similar questions.
+        Uses GPT-4 to create a standardized representation before hashing.
+        """
+        try:
+            response = self.client.chat.completions.create(
+                model="gpt-4o-mini",
+                messages=[
+                    {"role": "system", "content": "Convert the given question into a standardized form capturing its core meaning. Remove specific details while keeping the essential query."},
+                    {"role": "user", "content": question}
+                ],
+                temperature=0.0,  # Use 0 temperature for consistency
+                max_tokens=50
+            )
+            
+            standardized = response.choices[0].message.content.strip().lower()
+            return hashlib.md5(standardized.encode()).hexdigest()
+            
+        except Exception as e:
+            self.logger.error(f"Error generating semantic hash: {str(e)}")
+            return hashlib.md5(question.lower().encode()).hexdigest()
+
+    def create_prompt(self, question: str) -> str:
+        """
+        Create a structured prompt for the OpenAI API with explicit formatting instructions.
+        """
+        return f"""Generate training data pairs based on this mental health question: "{question}"
+
+        Create 50 pairs of responses with varying similarity levels. Each response should be structured exactly like this example:
+        "When I felt overwhelmed with work deadlines, I took deep breaths and made a priority list.","I dealt with work stress by breathing deeply and organizing my tasks.",1.0
+        "When I felt overwhelmed with work deadlines, I took deep breaths and made a priority list.","I went for a walk to clear my head and then created an action plan.",0.75
+        "When I felt overwhelmed with work deadlines, I took deep breaths and made a priority list.","I talked to my friend about my feelings and they helped me cope.",0.5
+        "When I felt overwhelmed with work deadlines, I took deep breaths and made a priority list.","I enjoy practicing mindfulness meditation in the morning.",0.25
+        "When I felt overwhelmed with work deadlines, I took deep breaths and made a priority list.","My favorite recipe for banana bread requires three ripe bananas.",0.0
+
+        Important formatting rules:
+        1. Each line must be in the exact format: "sentence1","sentence2",similarity_score
+        2. Use straight quotes (") not curly quotes
+        3. Include exactly three elements per line separated by commas
+        4. Similarity scores should be one of: 1.0, 0.75, 0.5, 0.25, 0.0
+        5. Do not include any additional text or explanations
+        6. Start each line directly with a quote
+        """
+
+    def parse_response_line(self, line: str) -> Dict:
+        """
+        Parse a single line of response with robust error handling.
+        """
+        try:
+            line = line.strip().strip('"')
+            parts = line.split('","')
+            
+            if len(parts) != 3 and len(parts) != 2:
+                return None
+                
+            if len(parts) == 2:
+                last_part = parts[1]
+                last_parts = last_part.rsplit('",', 1)
+                if len(last_parts) == 2:
+                    parts = [parts[0], last_parts[0], last_parts[1]]
+                else:
+                    return None
+            
+            similarity = parts[2].strip().strip('"')
+            try:
+                similarity = float(similarity)
+            except ValueError:
+                return None
+                
+            if similarity not in [1.0, 0.75, 0.5, 0.25, 0.0]:
+                return None
+                
+            return {
+                "sentence1": parts[0],
+                "sentence2": parts[1],
+                "similarity": similarity
+            }
+            
+        except Exception as e:
+            self.logger.debug(f"Error parsing line: {line}")
+            self.logger.debug(f"Error details: {str(e)}")
+            return None
+
+    def generate_variations(self, question: str) -> List[Dict]:
+        """
+        Generate variations for a given question using the OpenAI API.
+        """
+        try:
+            response = self.client.chat.completions.create(
+                model="gpt-4o-mini",
+                messages=[
+                    {"role": "system", "content": "You are a helpful assistant creating training data for mental health conversations. Generate natural, empathetic responses in the exact CSV format specified."},
+                    {"role": "user", "content": self.create_prompt(question)}
+                ],
+                temperature=0.7,
+                max_tokens=2000
+            )
+            
+            content = response.choices[0].message.content
+            pairs = []
+            
+            for line in content.strip().split('\n'):
+                line = line.strip()
+                if line and '"' in line:
+                    parsed = self.parse_response_line(line)
+                    if parsed:
+                        pairs.append(parsed)
+                    else:
+                        self.logger.warning(f"Skipped invalid line: {line}")
+            
+            if not pairs:
+                self.logger.error(f"No valid pairs generated from response: {content}")
+                
+            return pairs
+            
+        except Exception as e:
+            self.logger.error(f"Error generating variations for question: {question}")
+            self.logger.error(f"Error details: {str(e)}")
+            return []
+
+    def save_to_csv(self, data: List[Dict]) -> None:
+        """
+        Save the generated data to a CSV file.
+        """
+        file_exists = os.path.isfile(self.output_file)
+        
+        try:
+            with open(self.output_file, mode='a', newline='', encoding='utf-8') as file:
+                writer = csv.DictWriter(file, fieldnames=["sentence1", "sentence2", "similarity"])
+                
+                if not file_exists:
+                    writer.writeheader()
+                
+                writer.writerows(data)
+                
+        except Exception as e:
+            self.logger.error(f"Error saving to CSV: {str(e)}")
+
+    def generate_dataset(self, num_questions: int = 20) -> None:
+        """
+        Generate the complete dataset with dynamically generated questions.
+        
+        Args:
+            num_questions: Number of unique questions to generate and process
+        """
+        self.logger.info(f"Starting data generation at {datetime.now()}")
+        self.logger.info(f"Generating {num_questions} unique questions")
+        
+        total_pairs = 0
+        questions_generated = 0
+        
+        while questions_generated < num_questions:
+            question = self.generate_question()
+            
+            if not question:
+                continue
+                
+            self.logger.info(f"Generated question {questions_generated + 1}: {question}")
+            
+            variations = self.generate_variations(question)
+            if variations:
+                self.save_to_csv(variations)
+                total_pairs += len(variations)
+                questions_generated += 1
+                self.logger.info(f"Generated {len(variations)} valid pairs for current question")
+            else:
+                self.logger.warning(f"No valid pairs generated for question: {question}")
+            
+        self.logger.info(f"Data generation complete. Total questions: {questions_generated}")
+        self.logger.info(f"Total pairs generated: {total_pairs}")
+
+def main():
+    # Replace with your API key
+    API_KEY = dotenv.get_key('.env', 'OPENAI_API_KEY')
+    # Initialize and run the generator
+    generator = MentalHealthDataGenerator(API_KEY)
+    
+    # Generate dataset with 20 unique questions
+    generator.generate_dataset(num_questions=500)
+
+if __name__ == "__main__":
+    main()
