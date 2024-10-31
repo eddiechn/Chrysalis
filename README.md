@@ -25,7 +25,7 @@ Chrysalis is a space for personal growth and natural connection. By focusing on 
 
 ## Tech Stack
 
-- **Frontend:** Swift
+- **Frontend:** SwiftUI
 - **Backend:** Spring Boot (Kotlin), Flask (Python)
 - **Database:** PostgreSQL, Azure
 - **Machine Learning:** PyTorch, Transformers (Sentence-BERT)
