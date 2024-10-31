@@ -42,4 +42,4 @@ Chrysalis is a space for personal growth and natural connection. By focusing on 
 You can contact us using our information below: 
 
 - Eddie Chen : eddiechn12@gmail.com
-- Nathan Audegond: nathan.audegond@gmail.com
+- Nathan Audegond: nathan.audegond@hotmail.com
