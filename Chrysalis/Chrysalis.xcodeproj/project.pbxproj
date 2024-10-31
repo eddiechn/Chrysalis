@@ -1,0 +1,572 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		32DCD3942CD2ADFD001FE0FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 32DCD37B2CD2ADFA001FE0FE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 32DCD3822CD2ADFB001FE0FE;
+			remoteInfo = Chrysalis;
+		};
+		32DCD39E2CD2ADFD001FE0FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 32DCD37B2CD2ADFA001FE0FE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 32DCD3822CD2ADFB001FE0FE;
+			remoteInfo = Chrysalis;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		32DCD3832CD2ADFB001FE0FE /* Chrysalis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chrysalis.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		32DCD3932CD2ADFD001FE0FE /* ChrysalisTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChrysalisTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		32DCD39D2CD2ADFD001FE0FE /* ChrysalisUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChrysalisUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		32DCD3B52CD3B5E3001FE0FE /* Exceptions for "Chrysalis" folder in "Chrysalis" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 32DCD3822CD2ADFB001FE0FE /* Chrysalis */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		32DCD3852CD2ADFB001FE0FE /* Chrysalis */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				32DCD3B52CD3B5E3001FE0FE /* Exceptions for "Chrysalis" folder in "Chrysalis" target */,
+			);
+			path = Chrysalis;
+			sourceTree = "<group>";
+		};
+		32DCD3962CD2ADFD001FE0FE /* ChrysalisTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ChrysalisTests;
+			sourceTree = "<group>";
+		};
+		32DCD3A02CD2ADFD001FE0FE /* ChrysalisUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ChrysalisUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		32DCD3802CD2ADFB001FE0FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32DCD3902CD2ADFD001FE0FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32DCD39A2CD2ADFD001FE0FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		32DCD37A2CD2ADFA001FE0FE = {
+			isa = PBXGroup;
+			children = (
+				32DCD3852CD2ADFB001FE0FE /* Chrysalis */,
+				32DCD3962CD2ADFD001FE0FE /* ChrysalisTests */,
+				32DCD3A02CD2ADFD001FE0FE /* ChrysalisUITests */,
+				32DCD3842CD2ADFB001FE0FE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		32DCD3842CD2ADFB001FE0FE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				32DCD3832CD2ADFB001FE0FE /* Chrysalis.app */,
+				32DCD3932CD2ADFD001FE0FE /* ChrysalisTests.xctest */,
+				32DCD39D2CD2ADFD001FE0FE /* ChrysalisUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		32DCD3822CD2ADFB001FE0FE /* Chrysalis */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 32DCD3A72CD2ADFD001FE0FE /* Build configuration list for PBXNativeTarget "Chrysalis" */;
+			buildPhases = (
+				32DCD37F2CD2ADFB001FE0FE /* Sources */,
+				32DCD3802CD2ADFB001FE0FE /* Frameworks */,
+				32DCD3812CD2ADFB001FE0FE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				32DCD3852CD2ADFB001FE0FE /* Chrysalis */,
+			);
+			name = Chrysalis;
+			packageProductDependencies = (
+			);
+			productName = Chrysalis;
+			productReference = 32DCD3832CD2ADFB001FE0FE /* Chrysalis.app */;
+			productType = "com.apple.product-type.application";
+		};
+		32DCD3922CD2ADFD001FE0FE /* ChrysalisTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 32DCD3AA2CD2ADFD001FE0FE /* Build configuration list for PBXNativeTarget "ChrysalisTests" */;
+			buildPhases = (
+				32DCD38F2CD2ADFD001FE0FE /* Sources */,
+				32DCD3902CD2ADFD001FE0FE /* Frameworks */,
+				32DCD3912CD2ADFD001FE0FE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				32DCD3952CD2ADFD001FE0FE /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				32DCD3962CD2ADFD001FE0FE /* ChrysalisTests */,
+			);
+			name = ChrysalisTests;
+			packageProductDependencies = (
+			);
+			productName = ChrysalisTests;
+			productReference = 32DCD3932CD2ADFD001FE0FE /* ChrysalisTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		32DCD39C2CD2ADFD001FE0FE /* ChrysalisUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 32DCD3AD2CD2ADFD001FE0FE /* Build configuration list for PBXNativeTarget "ChrysalisUITests" */;
+			buildPhases = (
+				32DCD3992CD2ADFD001FE0FE /* Sources */,
+				32DCD39A2CD2ADFD001FE0FE /* Frameworks */,
+				32DCD39B2CD2ADFD001FE0FE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				32DCD39F2CD2ADFD001FE0FE /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				32DCD3A02CD2ADFD001FE0FE /* ChrysalisUITests */,
+			);
+			name = ChrysalisUITests;
+			packageProductDependencies = (
+			);
+			productName = ChrysalisUITests;
+			productReference = 32DCD39D2CD2ADFD001FE0FE /* ChrysalisUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		32DCD37B2CD2ADFA001FE0FE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					32DCD3822CD2ADFB001FE0FE = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					32DCD3922CD2ADFD001FE0FE = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 32DCD3822CD2ADFB001FE0FE;
+					};
+					32DCD39C2CD2ADFD001FE0FE = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 32DCD3822CD2ADFB001FE0FE;
+					};
+				};
+			};
+			buildConfigurationList = 32DCD37E2CD2ADFB001FE0FE /* Build configuration list for PBXProject "Chrysalis" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 32DCD37A2CD2ADFA001FE0FE;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 32DCD3842CD2ADFB001FE0FE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				32DCD3822CD2ADFB001FE0FE /* Chrysalis */,
+				32DCD3922CD2ADFD001FE0FE /* ChrysalisTests */,
+				32DCD39C2CD2ADFD001FE0FE /* ChrysalisUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		32DCD3812CD2ADFB001FE0FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32DCD3912CD2ADFD001FE0FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32DCD39B2CD2ADFD001FE0FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		32DCD37F2CD2ADFB001FE0FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32DCD38F2CD2ADFD001FE0FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32DCD3992CD2ADFD001FE0FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		32DCD3952CD2ADFD001FE0FE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 32DCD3822CD2ADFB001FE0FE /* Chrysalis */;
+			targetProxy = 32DCD3942CD2ADFD001FE0FE /* PBXContainerItemProxy */;
+		};
+		32DCD39F2CD2ADFD001FE0FE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 32DCD3822CD2ADFB001FE0FE /* Chrysalis */;
+			targetProxy = 32DCD39E2CD2ADFD001FE0FE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		32DCD3A52CD2ADFD001FE0FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		32DCD3A62CD2ADFD001FE0FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		32DCD3A82CD2ADFD001FE0FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Chrysalis/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Chrysalis/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Chrysalis.Chrysalis;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		32DCD3A92CD2ADFD001FE0FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Chrysalis/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Chrysalis/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Chrysalis.Chrysalis;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		32DCD3AB2CD2ADFD001FE0FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Chrysalis.ChrysalisTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Chrysalis.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Chrysalis";
+			};
+			name = Debug;
+		};
+		32DCD3AC2CD2ADFD001FE0FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Chrysalis.ChrysalisTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Chrysalis.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Chrysalis";
+			};
+			name = Release;
+		};
+		32DCD3AE2CD2ADFD001FE0FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Chrysalis.ChrysalisUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Chrysalis;
+			};
+			name = Debug;
+		};
+		32DCD3AF2CD2ADFD001FE0FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Chrysalis.ChrysalisUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Chrysalis;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		32DCD37E2CD2ADFB001FE0FE /* Build configuration list for PBXProject "Chrysalis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32DCD3A52CD2ADFD001FE0FE /* Debug */,
+				32DCD3A62CD2ADFD001FE0FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		32DCD3A72CD2ADFD001FE0FE /* Build configuration list for PBXNativeTarget "Chrysalis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32DCD3A82CD2ADFD001FE0FE /* Debug */,
+				32DCD3A92CD2ADFD001FE0FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		32DCD3AA2CD2ADFD001FE0FE /* Build configuration list for PBXNativeTarget "ChrysalisTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32DCD3AB2CD2ADFD001FE0FE /* Debug */,
+				32DCD3AC2CD2ADFD001FE0FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		32DCD3AD2CD2ADFD001FE0FE /* Build configuration list for PBXNativeTarget "ChrysalisUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32DCD3AE2CD2ADFD001FE0FE /* Debug */,
+				32DCD3AF2CD2ADFD001FE0FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 32DCD37B2CD2ADFA001FE0FE /* Project object */;
+}
