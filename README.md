@@ -34,8 +34,8 @@ Chrysalis is a space for personal growth and natural connection. By focusing on 
 
 ## Contributors 
 
-- **[Eddie Chen](https://github.com/eddiechen):** ML, Backend, Database
-- **[Nathan Audegond](https://github.com/nathanaudegond):** Frontend, Backend
+- **[Eddie Chen](https://github.com/eddiechn):** ML, Backend, Database
+- **[Nathan Audegond](https://github.com/na29):** Frontend, Backend
 
 ## Contact 
 
