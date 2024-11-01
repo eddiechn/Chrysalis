@@ -29,7 +29,7 @@ Chrysalis is a space for personal growth and natural connection. By focusing on 
 - **Backend:** Spring Boot (Kotlin), Flask (Python)
 - **Database:** PostgreSQL
 - **Machine Learning:** PyTorch, Transformers (Sentence-BERT)
-- **Cloud:** Azure for database hosting
+- **Cloud:** Azure
 - **APIs:** OpenAI API for dataset generation
 
 ## Contributors 
